@@ -31,12 +31,12 @@ public class Frame extends JFrame{
 		JPanel jp1=null;
 		JButton jb1=null;
 		JLabel jlb1=null;
-		String string="µ±Ç°Ö±¾¶:";
-		public Frame(int i,int k,int m,int j)//i¿ØÖÆÔö³¤ËÙ¶È£¬kÎÒµÄ¿ØÖÆËÙ¶È,m¿ØÖÆµĞ·½ËÙ¶È,j¿ØÖÆÏß³ÌË¢ĞÂ
+		String string="å½“å‰ç›´å¾„:";
+		public Frame(int i,int k,int m,int j)//iæ§åˆ¶å¢é•¿é€Ÿåº¦ï¼Œkæˆ‘çš„æ§åˆ¶é€Ÿåº¦,mæ§åˆ¶æ•Œæ–¹é€Ÿåº¦,jæ§åˆ¶çº¿ç¨‹åˆ·æ–°
 		{
 			
 			jp1=new JPanel();
-			jb1=new JButton("ÖØĞÂ¿ªÊ¼");
+			jb1=new JButton("é‡æ–°å¼€å§‹");
 			jp1.add(jb1);
 			jlb1=new JLabel(string);
 			jlb1.setBounds(10, 10, 80, 20);
@@ -44,7 +44,7 @@ public class Frame extends JFrame{
 			this.add(jlb1);
 			this.setLayout(null);
 			this.setVisible(true);
-			this.setTitle("´óÇò³ÔĞ¡Çò");
+			this.setTitle("å¤§çƒåƒå°çƒ");
 			this.setSize(1000, 1000);
 			this.setLocation(400, 0);
 			this.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -109,12 +109,13 @@ public class Frame extends JFrame{
 						if(isAnimate){
 						otherBall.iseat(mb,i);
 						otherBall.isAlive();
-						string="µ±Ç°Ö±¾¶:"+mb.getDiameter();
+						string="å½“å‰ç›´å¾„:"+mb.getDiameter();
 						jlb1.setText(string);
 						if(mb.getDiameter()!=0&&mb.getX()>-100&&mb.getX()<1100&&mb.getY()>-100&&mb.getY()<1100){
-						repaint();
 						otherBall.move(m);
-						mb.move(k);}						
+						mb.move(k);
+						repaint();
+						}
 						else{
 							try {
 								Thread.sleep(3000);
@@ -125,7 +126,7 @@ public class Frame extends JFrame{
 								// TODO Auto-generated catch block
 								e.printStackTrace();
 							}
-							System.out.println("ÓÎÏ·Ê§°Ü");
+							System.out.println("æ¸¸æˆå¤±è´¥");
 							AgainPanel againPanel=new AgainPanel();
 							break;
 						}
